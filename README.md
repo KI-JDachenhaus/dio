@@ -10,6 +10,31 @@ This repository also includes a Claude Code skill, `dio-classify`, that teaches 
 
 ## Install
 
+### Let Claude install it
+
+Paste this into Claude Code, and it installs Dio and the `dio-classify` skill for you:
+
+```text
+Install Dio from https://github.com/KI-JDachenhaus/dio for me:
+
+1. Check that uv is installed (`uv --version`). If it isn't, stop and ask me
+   before installing it.
+2. Run `uv tool install git+https://github.com/KI-JDachenhaus/dio`, then
+   `uv tool update-shell` so the `dio` command is on my PATH.
+3. Download the skill to my user skills folder, so it works in every project:
+   https://raw.githubusercontent.com/KI-JDachenhaus/dio/main/.claude/skills/dio-classify/SKILL.md
+   goes to ~/.claude/skills/dio-classify/SKILL.md (create the folder).
+4. Check that `dio --help` runs. If the command isn't found, it's because
+   update-shell only affects new terminals, so run it by its full path from
+   `uv tool dir --bin`.
+5. Tell me what you installed, and that I need to restart Claude Code for the
+   skill and the PATH change to take effect.
+```
+
+To update Dio later, ask Claude to run `uv tool upgrade dio` and download the skill again.
+
+### Install it yourself
+
 You need:
 
 - [uv](https://docs.astral.sh/uv/getting-started/installation/)
